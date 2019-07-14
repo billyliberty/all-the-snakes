@@ -1,0 +1,6 @@
+<p> Here are your snake sacks, <%= @hunter.username %>
+<% @hunter.snake_sacks.each do |sack| %>
+  <ul>
+    <li><a href="/sacks/<%=sack.id%>"><%= sack.name %></a></li>
+  </ul>
+<% end %
