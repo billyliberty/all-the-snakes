@@ -1,4 +1,7 @@
+class HunterController < ApplicationController
+
 # get 'signup'
+
 
 # post 'signup'
 
@@ -7,3 +10,5 @@
 # post 'login'
 
 # post 'logout'
+
+end
