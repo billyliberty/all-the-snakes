@@ -7,6 +7,8 @@ class CreateSnakes < ActiveRecord::Migration
       t.integer :snake_sack_id
       t.string :location 
       t.integer :date
+      
+      t.timestamps null: false
     end
   end
 end
