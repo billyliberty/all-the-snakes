@@ -2,7 +2,7 @@ class HuntersController < ApplicationController
 
   get 'hunters/:id' do
    if logged_in?
-    redirect to '/snake_sacks'
+    redirect to '/snake_sacks/show'
    end
   
   @hunter = Hunter.find_by(params[:id])
@@ -25,7 +25,7 @@ class HuntersController < ApplicationController
     else
       @hunter = Hunter.create[:email => params[:email], :password => params[:password]]
       session[:hunter_id] = @hunter.id 
-      redirect to '/snake_bags'
+      redirect to '/snake_sacks/show'
     end
   end
   
