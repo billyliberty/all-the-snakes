@@ -13,7 +13,7 @@ class HuntersController < ApplicationController
       @hunter = Hunter.new(:name => params[:name], :email => params[:email], :password => params[:password])
       @hunter.save
       session[:hunter_id] = @hunter.id
-      redirect to '/hunters/#{@hunter.id}'
+      redirect to '/hunters/show'
     else
       redirect to '/signup'
     end
