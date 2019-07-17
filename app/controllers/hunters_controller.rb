@@ -15,8 +15,9 @@ class HuntersController < ApplicationController
     erb :'/hunters/new'
   end
   
-  post '/hunters' do
-    binding.pry
+  post '/signup' do
+    @hunter = Hunter.create(:email => params[:email], :password => params[:password])
+    session[:hunter_id] = @hunter.id
   end
   
   get '/login' do 
