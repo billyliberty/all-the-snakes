@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
-  helper do 
+  helpers do 
     
     def current_hunter
       @current_hunter ||= Hunter.find_by(id: session[:hunter_id])
