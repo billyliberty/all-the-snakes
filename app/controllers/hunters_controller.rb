@@ -19,6 +19,18 @@ class HuntersController < ApplicationController
     end
   end
   
+  post 'signup' do
+    if params[:email] == "" || params [:password] == ""
+      redirect to '/signup'
+    else
+      @hunter = Hunter.create[:email => params[:email], :password => params[:password]]
+      session[:hunter_id] = @hunter.id 
+      redirect to '/snake_bags'
+    end
+  end
+  
+  
+  
   
 
 
