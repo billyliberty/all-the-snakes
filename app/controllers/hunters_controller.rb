@@ -7,6 +7,7 @@ class HuntersController < ApplicationController
   post '/signup' do
     if params[:name] != "" && params[:email] != "" && params[:password] != ""
       @hunter = Hunter.create(params)
+      redirect "/hunters/#{hunter.id}"
     else
       redirect to '/signup'
     end
@@ -14,6 +15,10 @@ class HuntersController < ApplicationController
   
   get '/login' do 
     erb :'hunters/login'
+  end
+  
+  get '/hunters/:id' do
+    "This will be the hunter's collection"
   end
   
 end
