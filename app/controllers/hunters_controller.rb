@@ -18,7 +18,7 @@ class HuntersController < ApplicationController
   end
   
   get '/hunters/:id' do
-    "This will be the hunter's collection"
+    erb :'/hunters/show'
   end
   
 end
