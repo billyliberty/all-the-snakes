@@ -4,9 +4,7 @@ class CreateSnakeSacks < ActiveRecord::Migration
       t.string :name
       t.integer :date
       t.integer :hunter_id
-      t.integer :capacity
-      t.decimal :total_value
-      
+
       t.timestamps null:false
     end
   end
