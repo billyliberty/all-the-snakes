@@ -22,4 +22,9 @@ class HuntersController < ApplicationController
     erb :'/hunters/show'
   end
   
+  get '/logout' do 
+    session.destroy 
+    redirect to '/'
+  end
+  
 end
