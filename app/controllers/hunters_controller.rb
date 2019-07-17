@@ -20,7 +20,11 @@ class HuntersController < ApplicationController
   end
   
   get '/login' do 
-    erb :'hunters/login'
+    if logged_in?
+      redirect to '/hunters/show'
+    else
+      erb :'hunters/login'
+    end
   end
   
   get '/hunters/:id' do
