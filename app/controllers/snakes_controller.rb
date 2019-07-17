@@ -14,4 +14,13 @@ class SnakesController < ApplicationController
     erb :'snakes/edit'
   end
   
+  # post '/snakes/:id' do
+  
+  get "/snakes/:id" do
+    @snake = Snake.find(params[:id])
+    erb :'snakes/show'
+  end
+
+
+  
 end
