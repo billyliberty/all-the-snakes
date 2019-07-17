@@ -1,4 +1,4 @@
-class HunterController < ApplicationController
+class HuntersController < ApplicationController
 
 # get 'signup'
 
