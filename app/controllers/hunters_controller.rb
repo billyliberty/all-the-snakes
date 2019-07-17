@@ -2,7 +2,7 @@ class HuntersController < ApplicationController
 
   get 'hunters/:id' do
    if logged_in?
-    redirect to '/snake_sacks/show'
+    redirect to '/hunters/show'
   end
   
   @hunter = Hunter.find_by(params[:id])
