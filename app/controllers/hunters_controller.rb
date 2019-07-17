@@ -7,7 +7,7 @@ class HuntersController < ApplicationController
   post '/signup' do
     if params[:name] != "" && params[:email] != "" && params[:password] != ""
       @hunter = Hunter.create(params)
-      redirect "/hunters/#{hunter.id}"
+      redirect to '/hunters/#{hunter.id}'
     else
       redirect to '/signup'
     end
@@ -18,6 +18,7 @@ class HuntersController < ApplicationController
   end
   
   get '/hunters/:id' do
+    @hunter = Hunter.find_by(id: params[:id])
     erb :'/hunters/show'
   end
   
