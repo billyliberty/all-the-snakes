@@ -1,7 +1,11 @@
 class HuntersController < ApplicationController
   
   get '/signup' do 
-    erb :'/hunters/new'
+    if logged_in?
+      redirect to '/hunters/show'
+    else
+      erb :'/hunters/new'
+    end
   end
   
   post '/signup' do
