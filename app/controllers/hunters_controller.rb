@@ -18,5 +18,10 @@ class HuntersController < ApplicationController
   post '/hunters' do
     binding.pry
   end
+  
+  get '/login' do 
+    erb :'hunters/login'
+  end
+  
 
 end
