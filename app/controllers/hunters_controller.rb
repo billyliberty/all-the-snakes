@@ -7,7 +7,7 @@ class HuntersController < ApplicationController
   post '/signup' do
     if params[:name] != "" && params[:email] != "" && params[:password] != ""
       @hunter = Hunter.create(params)
-      redirect to '/hunters/#{hunter.id}'
+      redirect to '/hunters/#{@hunter.id}'
     else
       redirect to '/signup'
     end
