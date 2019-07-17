@@ -9,4 +9,9 @@ class SnakesController < ApplicationController
     erb :'snakes/new'
   end
   
+  get '/snakes/:id/edit' do
+    @snake = Snake.find(params[:id])
+    erb :'snakes/edit'
+  end
+  
 end
