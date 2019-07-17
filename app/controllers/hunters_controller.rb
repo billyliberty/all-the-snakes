@@ -27,12 +27,24 @@ class HuntersController < ApplicationController
     end
   end
   
+  post '/login' do
+    hunter = Hunter.find_by(:email => params[:email])
+
+    if hunter && hunter.authenticate(params[:password])
+	    session[:hunter_id] = hunter.id
+	    redirect '/hunters/show'
+    else
+	    redirect '/login'
+    end
+	end
+  
   get '/hunters/:id' do
     @hunter = Hunter.find_by(id: params[:id])
     erb :'/hunters/show'
   end
   
   get '/logout' do 
+    if logged_in?
     session.destroy 
     redirect to '/'
   end
