@@ -1,13 +1,13 @@
 # Hunters:
 
-Pete = Hunter.create(email: "pete@email.com", name: "Pete", password: "password")
-Joshua = Hunter.create(email: "joshua@email.com", name: "Joshua", password: "password")
+pete = Hunter.create(email: "pete@email.com", name: "Pete", password: "password")
+joshua = Hunter.create(email: "joshua@email.com", name: "Joshua", password: "password")
 
 #Snake Sacks:
 
-Everglades = SnakeSack.create(name: "Everglades", hunter_id: joshua.id)
-Florida = SnakeSack.create(name: "Florida", hunter_id: joshua.id)
-Summer = SnakeSack.create(name: "Summer", hunter_id: pete.id)
+everglades = SnakeSack.create(name: "Everglades", hunter_id: joshua.id)
+florida = SnakeSack.create(name: "Florida", hunter_id: joshua.id)
+summer = SnakeSack.create(name: "Summer", hunter_id: pete.id)
 
 # Snakes:
 
