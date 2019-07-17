@@ -32,9 +32,9 @@ class HuntersController < ApplicationController
 
     if hunter && hunter.authenticate(params[:password])
 	    session[:hunter_id] = hunter.id
-	    redirect '/hunters/show'
+	    redirect to '/hunters/show'
     else
-	    redirect '/login'
+	    redirect to '/login'
     end
 	end
   
