@@ -4,18 +4,18 @@ class HuntersController < ApplicationController
     if logged_in?
       redirect to '/hunters/show'
     else
-      erb :'/hunters/new'
+      erb :'/hunters/signup'
     end
   end
   
   post '/signup' do
-    if params[:name] != "" && params[:email] != "" && params[:password] != ""
+    if params[:name] == "" || params[:email] == "" || params[:password] == ""
+      redirect to '/signup'
+    else
       @hunter = Hunter.new(:name => params[:name], :email => params[:email], :password => params[:password])
       @hunter.save
       session[:hunter_id] = @hunter.id
       redirect to '/hunters/show'
-    else
-      redirect to '/signup'
     end
   end
   
