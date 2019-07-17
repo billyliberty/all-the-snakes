@@ -12,17 +12,11 @@ class HuntersController < ApplicationController
   end
   
   get '/signup' do 
-    if !session[:hunter_id]
-      erb :'/hunters/new'
-    else
-      redirect to '/snakes'
-    end
+    erb :'/hunters/new'
   end
   
-  post 'signup' do
-    @hunter = Hunter.create[:email => params[:email], :password => params[:password]]
-    session[:hunter_id] = @hunter.id 
-    redirect to '/snake_sacks/show'
+  post '/hunters' do
+    binding.pry
   end
 
 end
