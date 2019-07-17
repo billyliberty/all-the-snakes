@@ -3,7 +3,7 @@ class CreateSnakes < ActiveRecord::Migration
     create_table :snakes do |t|
       t.integer :length 
       t.integer :weight 
-      t.decimal :value 
+      t.decimal :monetary_value 
       t.integer :snake_sack_id
 
       t.timestamps null: false
