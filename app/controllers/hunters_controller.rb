@@ -19,6 +19,7 @@ class HuntersController < ApplicationController
     end
   end
   
+  
   get '/login' do 
     if logged_in?
       redirect to '/hunters/show'
