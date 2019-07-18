@@ -1,7 +1,7 @@
 class SnakesController < ApplicationController
   
   get '/snakes' do 
-    @snakes = Snakes.all 
+    @snakes = Snake.all 
     erb :'snakes/index'
   end
   
@@ -53,8 +53,7 @@ class SnakesController < ApplicationController
     end
   end
   
-  
-  get "/snakes/:id" do
+  get "/snakes/:id/show" do
     find_snake
     erb :'snakes/show'
   end
