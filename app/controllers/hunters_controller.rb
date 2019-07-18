@@ -41,7 +41,7 @@ class HuntersController < ApplicationController
 	end
   
   get '/hunters/:id' do
-    # @hunter = Hunter.find_by(id: params[:id])
+    @hunter = Hunter.find_by(id: params[:id])
     erb :'/hunters/show'
   end
   
