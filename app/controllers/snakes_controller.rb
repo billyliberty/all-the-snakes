@@ -32,7 +32,8 @@ class SnakesController < ApplicationController
   
   patch '/snakes/:id' do
     find_snake
-    
+    @snake.update(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value])
+    redirect to "snakes/#{@snake.id}"
   end
   
   
