@@ -22,6 +22,7 @@ class SnakesController < ApplicationController
       
     else redirect to "/snakes/new"
     end
+  
   end
   
   get '/snakes/:id/edit' do
@@ -29,7 +30,6 @@ class SnakesController < ApplicationController
     erb :'snakes/edit'
   end
   
-  # post '/snakes/:id' do
   
   get "/snakes/:id" do
     @snake = Snake.find(params[:id])
