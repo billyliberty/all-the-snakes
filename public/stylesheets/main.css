@@ -43,7 +43,7 @@
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #1d6db5;
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -71,6 +71,7 @@
     background: #eee;
     border: 1px solid #ccc;
     float: right;
+    margin-bottom: 30px;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 30%; /* 240px / 800px */
   }
