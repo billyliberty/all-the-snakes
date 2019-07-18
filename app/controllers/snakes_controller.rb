@@ -13,8 +13,9 @@ class SnakesController < ApplicationController
     if params[:content] == "" || params[:length] == "" || params[:weight] == "" || params[:monetary_value == ""]
       redirect to "/snakes/new"
     else
-      @snake = Snake.new(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value])
+      @snake = Snake.new(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value], hunter_id: current_hunter.id )
       @snake.save
+      redirect to "/snakes/show"
     end
   end
   
