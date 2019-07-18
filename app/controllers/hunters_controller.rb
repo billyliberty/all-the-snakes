@@ -28,10 +28,11 @@ class HuntersController < ApplicationController
   end
   
   post '/login' do
-    hunter = Hunter.find_by(:email => params[:email])
+    @hunter = Hunter.find_by(:email => params[:email])
 
-    if hunter && hunter.authenticate(params[:password])
-	    session[:hunter_id] = hunter.id
+    if @hunter.authenticate(params[:password])
+	    session[:hunter_id] = @hunter.id
+	    puts session
 	    redirect to '/hunters/show'
     else
 	    redirect to '/login'
@@ -44,12 +45,9 @@ class HuntersController < ApplicationController
   end
   
   get '/logout' do 
-    if logged_in?
-      session.clear 
-      redirect to '/login'
-    else
-      redirect to '/'
-    end
+    logged_in?
+    session.clear 
+    redirect to '/'
   end
   
 end
