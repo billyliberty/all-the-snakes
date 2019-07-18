@@ -20,7 +20,5 @@ class SnakesController < ApplicationController
     @snake = Snake.find(params[:id])
     erb :'snakes/show'
   end
-
-
   
 end

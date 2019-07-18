@@ -1,3 +1,3 @@
 class Snake < ActiveRecord::Base
-  belongs_to :snake_sack
+  belongs_to :hunter
 end

@@ -1,3 +1,0 @@
-class SnakeSacksController < ApplicationController
-  
-end
