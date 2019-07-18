@@ -3,12 +3,12 @@
 
 <form class ="" action ="/snakes" method="post">
   <label for="content">Description:</label>
-  <input type="text" name="content" value="">
+  <input type="text" name="content" value="<%= @snake.content %>">
   <label for="length">Length:</label>
-  <input type="integer" name="length" value="">
+  <input type="integer" name="length" value="<%= @snake.length %>">
   <label for="weight">Weight:</label>
-  <input type="integer" name="weight" value="">
+  <input type="integer" name="weight" value="<%= @snake.weight %>">
   <label for="monetary_value">Monetary Value:</label>
-  <input type="decimal" name="monetary_value" value="">
+  <input type="decimal" name="monetary_value" value="<%= @snake.monetary_value %>">
   <input type="submit" name="" value="Edit Snake!">
 </form>
