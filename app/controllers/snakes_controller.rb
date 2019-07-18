@@ -61,7 +61,9 @@ class SnakesController < ApplicationController
   private
   
     def find_snake
-      @snake = Snake.find(params[:id])
+      @snake = Snake.find_by(id: params[:id])
     end
+    
+  end
   
 end
