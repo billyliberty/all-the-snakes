@@ -2,6 +2,7 @@
 <br>
 
 <form class ="" action ="/snakes" method="post">
+  <input type="hidden" name="_method" value="patch">
   <label for="content">Description:</label>
   <input type="text" name="content" value="<%= @snake.content %>">
   <label for="length">Length:</label>
