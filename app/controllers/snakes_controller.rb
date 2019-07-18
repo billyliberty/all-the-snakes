@@ -27,13 +27,24 @@ class SnakesController < ApplicationController
   
   get '/snakes/:id/edit' do
     find_snake
-    erb :'snakes/edit'
+    if logged_in?
+      if @snake.hunter == current_hunter
+        erb :'/snakes/edit'
+      else
+        redirect to "hunters/#{current_hunter.id}"
+      end
+    else
+      redirect to "/"
+    end
   end
   
   patch '/snakes/:id' do
-    find_snake
-    @snake.update(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value])
-    redirect to "snakes/#{@snake.id}"
+    if current_hunter
+      find_snake
+      @snake.update(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value])
+      redirect to "snakes/#{@snake.id}"
+    else redirect to "/"
+    end
   end
   
   
