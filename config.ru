@@ -6,5 +6,5 @@ end
 
 run ApplicationController
 use HuntersController
-use SnakeSacksController
 use SnakesController
+#use SnakesSacksController
