@@ -12,12 +12,15 @@ class SnakesController < ApplicationController
   post '/snakes' do
     if !logged_in?
       redirect to "/"
+    end
       
-    else params[:content] != "" || params[:length] != "" || params[:weight] != "" || params[:monetary_value != ""]
+    if params[:content] != "" || params[:length] != "" || params[:weight] != "" || params[:monetary_value != ""]
     
       @snake = Snake.new(:content => params[:content], :length => params[:length], :weight => params[:weight], :monetary_value => params[:monetary_value], hunter_id: current_hunter.id )
       @snake.save
       redirect to "/snakes/#{@snake.id}"
+      
+    else redirect to "/snakes/new"
     end
   end
   
