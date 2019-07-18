@@ -8,14 +8,15 @@ class HuntersController < ApplicationController
     end
   end
   
-  post '/signup' do
+  post '/hunters' do
     if params[:name] == "" || params[:email] == "" || params[:password] == ""
       redirect to "/signup"
     else
       @hunter = Hunter.new(:name => params[:name], :email => params[:email], :password => params[:password])
       @hunter.save
       session[:hunter_id] = @hunter.id
-      redirect to "/hunters/show"
+      puts session
+      redirect to "/hunters/#{@hunter.id}"
     end
   end
   
