@@ -1,7 +1,7 @@
 <h2>Edit Your Catch!</h2>
 <br>
 
-<form class ="" action ="/snakes" method="post">
+<form class ="" action ="/snakes/<%= @snake.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label for="content">Description:</label>
   <input type="text" name="content" value="<%= @snake.content %>">

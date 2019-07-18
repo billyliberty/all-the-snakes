@@ -26,14 +26,25 @@ class SnakesController < ApplicationController
   end
   
   get '/snakes/:id/edit' do
-    @snake = Snake.find(params[:id])
+    find_snake
     erb :'snakes/edit'
+  end
+  
+  patch '/snakes/:id' do
+    find_snake
+    
   end
   
   
   get "/snakes/:id" do
-    @snake = Snake.find(params[:id])
+    find_snake
     erb :'snakes/show'
   end
+  
+  private
+  
+    def find_snake
+      @snake = Snake.find(params[:id])
+    end
   
 end
