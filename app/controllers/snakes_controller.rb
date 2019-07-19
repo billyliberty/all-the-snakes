@@ -22,7 +22,6 @@ class SnakesController < ApplicationController
       
     else redirect to "/snakes/new"
     end
-  
   end
   
   get '/snakes/:id/edit' do
@@ -56,6 +55,16 @@ class SnakesController < ApplicationController
   get "/snakes/:id/show" do
     find_snake
     erb :'snakes/show'
+  end
+  
+  delete '/snakes/:id' do
+    @snake = Snake.find(params[:id])
+    if snake.hunter == current_hunter
+      @snake.destroy
+      redirect '/snakes'
+    else
+      redirect '/snakes'
+    end
   end
   
   private
