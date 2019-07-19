@@ -10,6 +10,15 @@ class HuntersController < ApplicationController
     end
   end
   
+  get'/snake_bag' do 
+    if current_hunter
+      @snake_bag = current_hunter.snakes 
+      erb :"/hunters/snake_bag"
+    else
+      redirect to "/"
+    end
+  end
+  
   # Permits new user to sign up for the site. This submits the form to the database.
   
   post '/hunters' do
