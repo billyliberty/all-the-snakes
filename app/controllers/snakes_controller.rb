@@ -7,7 +7,7 @@ class SnakesController < ApplicationController
       @snakes = Snake.all 
       erb :'snakes/index'
     else
-      redirect to "/"
+      redirect to "/hunters/#{@hunter.id}"
     end
   end
   
@@ -89,8 +89,8 @@ class SnakesController < ApplicationController
     @snake = Snake.find(params[:id])
     if @snake.hunter == current_hunter
       @snake.destroy
-      # flash[:message] = "Deletion successful"
-      redirect '/'
+      flash[:message] = "Deletion Successful"
+      redirect to "/"
     else
       redirect '/'
     end
