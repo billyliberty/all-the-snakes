@@ -1,12 +1,20 @@
 class SnakesController < ApplicationController
   
   get '/snakes' do 
-    @snakes = Snake.all 
-    erb :'snakes/index'
+    if logged_in?
+      @snakes = Snake.all 
+      erb :'snakes/index'
+    else
+      redirect to "/"
+    end
   end
   
   get '/snakes/new' do 
-    erb :'snakes/new'
+    if logged_in?
+      erb :'snakes/new'
+    else
+      redirect to "/"
+    end
   end
   
   post '/snakes' do
@@ -74,7 +82,5 @@ class SnakesController < ApplicationController
     def find_snake
       @snake = Snake.find_by(id: params[:id])
     end
-    
-  
   
 end
