@@ -52,12 +52,13 @@ class SnakesController < ApplicationController
     end
   end
   
-  get "/snakes/:id/show" do
+  get "/snakes/:id" do
     find_snake
     erb :'snakes/show'
   end
   
   delete '/snakes/:id' do
+    find_snake
     @snake = Snake.find(params[:id])
     if snake.hunter == current_hunter
       @snake.destroy
@@ -70,7 +71,7 @@ class SnakesController < ApplicationController
   private
   
     def find_snake
-      @snake = Snake.find_by(id: params[:id])
+      @snake = Snake.find(params[:id])
     end
     
   end
