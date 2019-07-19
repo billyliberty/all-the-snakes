@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   helpers do 
     
     def current_hunter
-      @current_hunter ||= Hunter.find_by(id: session[:hunter_id]) if session[:hunter_id]
+      @current_hunter ||= Hunter.find_by(id: session[:hunter_id]) 
     end
     
     def logged_in?

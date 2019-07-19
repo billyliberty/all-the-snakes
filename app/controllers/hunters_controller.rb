@@ -30,8 +30,8 @@ class HuntersController < ApplicationController
   end
   
   post '/login' do
-    @hunter = Hunter.find_by(:email => params[:email])
-    if @hunter.authenticate(params[:password])
+    @hunter = Hunter.find_by(:email params[:email])
+    if @hunter && @hunter.authenticate(params[:password])
 	    session[:hunter_id] = @hunter.id
 	    puts session
 	    redirect to "/hunters/#{@hunter.id}"
