@@ -54,7 +54,7 @@ class SnakesController < ApplicationController
   
   get "/snakes/:id" do
     find_snake
-    erb :'snakes/show'
+    erb :'/snakes/show'
   end
   
   delete '/snakes/:id' do
