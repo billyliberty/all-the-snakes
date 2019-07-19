@@ -4,7 +4,7 @@ class HuntersController < ApplicationController
   
   get '/signup' do 
     if logged_in?
-      redirect to "/hunters/show"
+      redirect to "/hunters/#{current_hunter.id}"
     else
       erb :'/hunters/signup'
     end
@@ -13,7 +13,7 @@ class HuntersController < ApplicationController
   get'/snake_bag' do 
     if current_hunter
       @snake_bag = current_hunter.snakes 
-      erb :"/hunters/snake_bag"
+      erb :'/hunters/snake_bag'
     else
       redirect to "/"
     end
@@ -37,7 +37,8 @@ class HuntersController < ApplicationController
   
   get '/login' do 
     if logged_in?
-      redirect to "/hunters/show"
+      puts session
+      redirect to "/hunters/#{current_hunter.id}"
     else
       erb :'hunters/login'
     end
