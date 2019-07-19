@@ -1,15 +1,15 @@
 <h2>Here are the pythons in your virtual bag!</h2>
 <br>
 <% @snakes.each do |snake| %>
-  <%= snake.id %>
+  <%= @snake.id %>
   <br>
-  <%= snake.content %> 
+  <%= @snake.content %> 
   <br>
-  <%= snake.length %> 
+  <%= @snake.length %> 
   <br>
-  <%= snake.weight %> 
+  <%= @snake.weight %> 
   <br>
-  <%= snake.value %> 
+  <%= @snake.value %> 
   <br>
 
   <a href='/snakes/edit'>Edit your catch!</a>
