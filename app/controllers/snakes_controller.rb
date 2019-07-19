@@ -62,6 +62,7 @@ class SnakesController < ApplicationController
     @snake = Snake.find(params[:id])
     if @snake.hunter == current_hunter
       @snake.destroy
+      flash[:message] = "Deletion successful!."
       redirect '/'
     else
       redirect '/'
@@ -71,7 +72,7 @@ class SnakesController < ApplicationController
   private
   
     def find_snake
-      @snake = Snake.find(params[:id])
+      @snake = Snake.find_by(id: params[:id])
     end
     
   
