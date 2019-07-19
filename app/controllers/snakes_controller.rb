@@ -74,6 +74,6 @@ class SnakesController < ApplicationController
       @snake = Snake.find(params[:id])
     end
     
-  end
+  
   
 end
