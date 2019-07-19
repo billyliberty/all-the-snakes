@@ -73,8 +73,12 @@ class SnakesController < ApplicationController
   # This is a show route for the addition.
   
   get "/snakes/:id" do
-    find_snake
-    erb :'/snakes/show'
+    if logged_in?
+      find_snake
+      erb :'/snakes/show'
+    else
+      redirect to "/"
+    end
   end
   
   # This permits the deletion of an addition from the database. Users can only delete their own additions.

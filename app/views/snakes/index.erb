@@ -1,14 +1,24 @@
-<h2>Here are the pythons in your virtual bag!</h2>
+<h2>Here are the pythons caught to date!</h2>
 <br>
 <% @snakes.each do |snake| %>
-  <%= snake.id %>
   <br>
+  <h3><%= snake.id %></h3>
+  <br>
+  <h3>Description:</h3>
   <%= snake.content %> 
   <br>
+  <h3>Length (Feet):</h3>
   <%= snake.length %> 
   <br>
+  <h3>Weight (pounds):</h3>
   <%= snake.weight %> 
   <br>
-  <%= snake.value %> 
+  <h3>Monetary Value (dollars):</h3>
+  <%= snake.monetary_value %> 
+  <br>
+  <br>
   <br>
 <% end %>
+
+<h3><a href='/snakes/new'>Add a catch to your bag!</a></h3>
+
