@@ -60,7 +60,7 @@ class SnakesController < ApplicationController
   delete '/snakes/:id' do
     find_snake
     @snake = Snake.find(params[:id])
-    if snake.hunter == current_hunter
+    if @snake.hunter == current_hunter
       @snake.destroy
       redirect '/snakes'
     else
