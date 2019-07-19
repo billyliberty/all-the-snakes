@@ -62,7 +62,7 @@ class SnakesController < ApplicationController
     @snake = Snake.find(params[:id])
     if @snake.hunter == current_hunter
       @snake.destroy
-      flash[:message] = "Deletion successful!."
+      flash[:message] = "Deletion successful"
       redirect '/'
     else
       redirect '/'

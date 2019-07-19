@@ -18,8 +18,12 @@
      <!-- <a href='/hunters/show'>Home</a> -->
     </div>
     <div class="wrapper">
+      
+      <% if flash[:message] %>
+      <h2><%= flash[:message] %></h2>
+      <% end %>
 
-        <%= yield %>
+      <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2019 <strong>Wildman: All The Snakes</strong></small>
