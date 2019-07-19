@@ -62,9 +62,9 @@ class SnakesController < ApplicationController
     @snake = Snake.find(params[:id])
     if @snake.hunter == current_hunter
       @snake.destroy
-      redirect '/snakes'
+      redirect '/'
     else
-      redirect '/snakes'
+      redirect '/'
     end
   end
   
