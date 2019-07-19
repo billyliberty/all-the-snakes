@@ -1,5 +1,7 @@
 class HuntersController < ApplicationController
   
+  # Permits new user to sign up for the site. This renders the signup form.
+  
   get '/signup' do 
     if logged_in?
       redirect to "/hunters/show"
@@ -7,6 +9,8 @@ class HuntersController < ApplicationController
       erb :'/hunters/signup'
     end
   end
+  
+  # Permits new user to sign up for the site. This submits the form to the database.
   
   post '/hunters' do
     if params[:name] == "" || params[:email] == "" || params[:password] == ""
@@ -20,6 +24,7 @@ class HuntersController < ApplicationController
     end
   end
   
+  # This permits an existing user to login. This renders the form to login.
   
   get '/login' do 
     if logged_in?
@@ -28,6 +33,8 @@ class HuntersController < ApplicationController
       erb :'hunters/login'
     end
   end
+  
+  # This permits an existing user to login. This submits the login information and verifies its authenticity.
   
   post '/login' do
     @hunter = Hunter.find_by(email: params[:email])
@@ -39,11 +46,15 @@ class HuntersController < ApplicationController
 	    redirect to "/login"
     end
 	end
+	
+	# This shows the profile for the hunter.
   
   get '/hunters/:id' do
     @hunter = Hunter.find_by(id: params[:id])
     erb :'/hunters/show'
   end
+  
+  # This clears the session and logs the user out. 
   
   get '/logout' do 
     logged_in?
